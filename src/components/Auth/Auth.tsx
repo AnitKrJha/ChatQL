@@ -19,7 +19,7 @@ const Auth = ({ session, reloadSession }: Props) => {
   return (
     <>
       <div className="flex min-h-[100dvh]  border-primary border">
-        <div className="flex flex-col gap-3 items-stretch  justify-center m-auto">
+        <div className="flex flex-col gap-3 items-center  justify-center m-auto">
           {session ? <AuthNoUserName /> : <AuthNoSession />}
         </div>
       </div>
@@ -38,7 +38,7 @@ function AuthNoSession() {
 
       <Button
         variant="secondary"
-        className="flex  justify-center gap-2 items-center"
+        className="flex w-full justify-center gap-2 items-center"
         onClick={() => {
           signIn("google");
         }}
@@ -70,6 +70,7 @@ function AuthNoUserName() {
         isLoading={loading === "save"}
         variant="secondary"
         loadingText="saving..."
+        className="w-full"
       >
         Save
       </ButtonLoading>
@@ -81,6 +82,7 @@ function AuthNoUserName() {
         }}
         isLoading={loading === "logout"}
         loadingText="logging out"
+        className="w-full"
       >
         Log Out
       </ButtonLoading>
